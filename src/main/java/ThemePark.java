@@ -1,5 +1,7 @@
 import attractions.Attraction;
 import behaviours.IReviewed;
+import org.w3c.dom.Attr;
+import people.Visitor;
 import stalls.Stall;
 
 import java.lang.reflect.Array;
@@ -10,6 +12,7 @@ public class ThemePark {
     private ArrayList<Attraction> attractions;
     private ArrayList<Stall> stalls;
     private ArrayList<IReviewed> reviewedAttractions;
+
 
     public ThemePark(ArrayList<Attraction> attractions, ArrayList<Stall> stalls, ArrayList<IReviewed> reviewedItems) {
         this.attractions = attractions;
@@ -35,6 +38,11 @@ public class ThemePark {
 
     public ArrayList<IReviewed> getReviewedItems() {
         return reviewedAttractions;
+    }
+
+    public void visit(Visitor visitor, Attraction attraction) {
+        attraction.visitAttraction();
+        visitor.visitAttraction(attraction);
     }
 
 
