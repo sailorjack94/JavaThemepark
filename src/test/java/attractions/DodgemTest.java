@@ -10,11 +10,13 @@ public class DodgemTest {
 
     Dodgems dodgems;
     Visitor guest1;
+    Visitor guest2;
 
     @Before
     public void setUp() throws Exception {
         dodgems = new Dodgems("Bumper Cars", 5);
         guest1 = new Visitor(26, 180, 100.00);
+        guest2 = new Visitor(11, 140, 10.00);
     }
 
 
@@ -49,7 +51,7 @@ public class DodgemTest {
     }
 
     @Test
-    public void getReviewRating(){
-
+    public void getPriceKids(){
+        assertEquals(2.25, dodgems.priceFor(guest2), 0.00);
     }
 }
