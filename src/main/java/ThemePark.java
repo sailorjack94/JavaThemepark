@@ -6,18 +6,19 @@ import stalls.Stall;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ThemePark {
 
     private ArrayList<Attraction> attractions;
     private ArrayList<Stall> stalls;
-    private ArrayList<IReviewed> reviewedAttractions;
+    private ArrayList<IReviewed> reviewed;
 
 
     public ThemePark(ArrayList<Attraction> attractions, ArrayList<Stall> stalls, ArrayList<IReviewed> reviewedItems) {
         this.attractions = attractions;
         this.stalls = stalls;
-        this.reviewedAttractions = reviewedItems;
+        this.reviewed = reviewedItems;
     }
 
     public void addAttraction(Attraction attraction){
@@ -37,16 +38,10 @@ public class ThemePark {
     }
 
     public ArrayList<IReviewed> getReviewedItems() {
-        if (attractions.size() != 0) {
-
-            for (Attraction attraction : this.attractions) {
-                if ( )
-            }
-
-
-
-        }
-        return reviewedAttractions;
+        ArrayList<IReviewed> reviewed = new ArrayList<>();
+        reviewed.addAll(this.attractions);
+        reviewed.addAll((Collection<? extends IReviewed>) this.stalls);
+        return reviewed;
     }
 
     public void visit(Visitor visitor, Attraction attraction) {
