@@ -37,6 +37,15 @@ public class ThemePark {
     }
 
     public ArrayList<IReviewed> getReviewedItems() {
+        if (attractions.size() != 0) {
+
+            for (Attraction attraction : this.attractions) {
+                if ( )
+            }
+
+
+
+        }
         return reviewedAttractions;
     }
 

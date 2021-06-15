@@ -10,9 +10,7 @@ public class ThemeParkTest {
 
     @Before
     public void before(){
-        themePark = new ThemePark();
-        visitor = new Visitor();
-        rollerCoaster = new RollerCoaster();
+
     }
 
 
